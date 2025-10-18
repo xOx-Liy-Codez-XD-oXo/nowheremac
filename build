@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")"
-gcc -mmacosx-version-min=10.0 -std=c99 main.c -o nowhere -lsdl -lsdlmain -framework Cocoa -framework OpenGL -O3 
+gcc -mmacosx-version-min=10.1 -std=c99 main.c -o nowhere -lsdl -lsdlmain -framework Cocoa -framework OpenGL -O3 
 install_name_tool -change /usr/local/lib/libSDL-1.2.0.dylib libSDL.dylib nowhere
 
 # make app
