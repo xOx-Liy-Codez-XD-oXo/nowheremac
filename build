@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+cd "$(dirname "$0")"
+gcc -mmacosx-version-min=10.0 -std=c99 main.c -o nowhere -lsdl -lsdlmain -framework Cocoa -framework OpenGL -O3 
+install_name_tool -change /usr/local/lib/libSDL-1.2.0.dylib libSDL.dylib nowhere
+
+# make app
+echo make app bundle ...
+mkdir nowhere\ to\ go.app
+mkdir nowhere\ to\ go.app/Contents
+mkdir nowhere\ to\ go.app/Contents/Resources
+mkdir nowhere\ to\ go.app/Contents/MacOS
+cp Info.plist nowhere\ to\ go.app/Contents/Info.plist
+cp nowhere nowhere\ to\ go.app/Contents/MacOS/nowhere
+cp run nowhere\ to\ go.app/Contents/MacOS/run
+cp song.raw nowhere\ to\ go.app/Contents/MacOS/song.raw
+cp libSDL.dylib nowhere\ to\ go.app/Contents/MacOS/libSDL.dylib
+cp nowhereicon.icns nowhere\ to\ go.app/Contents/Resources/nowhere.icns
