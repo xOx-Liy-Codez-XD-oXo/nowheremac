@@ -11,6 +11,8 @@ brew install sdl
 git clone https://github.com/xOx-Liy-Codez-XD-oXo/nowheremac
 cd nowheremac
 cp /usr/local/Cellar/sdl/1.2.15/lib/libSDL-1.2.0.dylib libSDL.dylib
+chmod +x build
+chmod +x run
 ./build
 ```
 ## license
