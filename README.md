@@ -15,7 +15,7 @@ chmod +x build
 chmod +x run
 ./build
 ```
-## license
+## licenses
 math_3d.h is licensed under the MIT license so heres a copy of that
 
 ```
