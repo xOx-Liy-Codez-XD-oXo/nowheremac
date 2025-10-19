@@ -1,5 +1,5 @@
 # nowhere to go for the mac
-it's just an sdl1 port of nowhere to go, but it compiles on mac os tiger and leopard and you'd need to change it slightly to get it to work on something else.
+it's just an sdl1 port of nowhere to go for the wii, but it compiles on mac os tiger and leopard and you'd need to change it slightly to get it to work on something else.
 
 <img width="1034" height="537" alt="Picture 9" src="https://github.com/user-attachments/assets/9d868b7d-bf5b-4465-aa00-cb0199df797d" />
 (you have to change a line to get a windowed mode)
