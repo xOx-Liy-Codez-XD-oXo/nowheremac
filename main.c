@@ -637,6 +637,7 @@ int main(int argc, char* argv[]) {
 
 	initDraw();
 	SDL_PauseAudio(0);
+	SDL_ShowCursor(SDL_DISABLE);
 	
 	struct timeval tv;
     gettimeofday(&tv, NULL);
