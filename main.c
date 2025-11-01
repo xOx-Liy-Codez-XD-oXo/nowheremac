@@ -7,12 +7,11 @@
 #define GL_SILENCE_DEPRECATION 1
 #ifdef __APPLE__
 #include <OpenGL/OpenGL.h>
-#include <GLUT/GLUT.h>
 #else
-#include <GL/OpenGL.h>
-#include <GL/GLUT.h>
+#include <GL/GL.h>
 #endif
 
+#define MATH_3D_IMPLEMENTATION 1
 #include "math_3d.h"
 
 #define f32 float
@@ -108,7 +107,6 @@ void initDraw() {
 	glViewport(0, 0, width, height);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(60.0f, ratio, 0.1f, 300.0f);
 }
 
 void drawFrame() {
@@ -119,14 +117,15 @@ void drawFrame() {
 	                   cameraAnim[(frame12) + 4], cameraAnim[(frame12) + 5], cameraAnim[(frame12) + 6], cameraAnim[(frame12) + 7],
 					   cameraAnim[(frame12) + 8], cameraAnim[(frame12) + 9], cameraAnim[(frame12) + 10], cameraAnim[(frame12) + 11],
 					   0.0f, 0.0f, 0.0f, 1.0f);
-	mat4_t model, modelview, model2, mrx, mry, mrz;
+	mat4_t model, modelview, model2, mrx, mry, mrz, persp;
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	if(frame > 1073 && frame < 1203) {
-		gluPerspective(cameraFovAnim[frame] * 2.0f, ratio, 11.0f, 30.0f);
+		persp = m4_perspective(cameraFovAnim[frame] * 2.0f, ratio, 11.0f, 30.0f);
 	} else {
-		gluPerspective(cameraFovAnim[frame] * 2.0f, ratio, 0.5f, 30.0f);
+		persp = m4_perspective(cameraFovAnim[frame] * 2.0f, ratio, 0.5f, 30.0f);
 	}
+	glLoadMatrixf(&persp);
 	glMatrixMode(GL_MODELVIEW);
 	
 	//Stage
