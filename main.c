@@ -610,7 +610,7 @@ int main(int argc, char* argv[]) {
 	}
 	FILE * songhandle = fopen("song.raw", "r");
 	if(songhandle == NULL) { FILE * songhandle = fopen("../Resources/song.raw", "r"); }
-	perror("song.raw:");
+	// perror("song.raw:"); //arrrhhhh peeerrror the plaaatypuus
 	if(songhandle == NULL) { printf("couldn't get song..\n"); return -1; }
 	unsigned int songhash = 0;
 	int cur;
