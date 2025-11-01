@@ -8,7 +8,7 @@
 #ifdef __APPLE__
 #include <OpenGL/OpenGL.h>
 #else
-#include <GL/GL.h>
+#include <GL/gl.h>
 #endif
 
 #define MATH_3D_IMPLEMENTATION 1
