@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")"
+chmod +x run
 
 system=$(uname -s)
 case "$system" in
@@ -8,7 +9,7 @@ case "$system" in
     install_name_tool -change /usr/local/lib/libSDL-1.2.0.dylib libSDL.dylib nowhere
     ;;
   *)
-    gcc -std=gnu99 main.c -o nowhere -lSDL -lSDLmain -lm -O3 -Wno-incompatible-pointer-types
+    gcc -std=gnu99 main.c -o nowhere -lSDL -lSDLmain -lGL -lm -O3 -Wno-incompatible-pointer-types
     ;;
 esac
 
